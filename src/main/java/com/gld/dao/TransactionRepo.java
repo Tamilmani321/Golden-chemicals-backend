@@ -16,7 +16,7 @@ import com.gld.entity.Transaction;
 public interface TransactionRepo extends JpaRepository<Transaction, Long>
 {
 	
-	 List<Transaction> findByPartyIdOrderByTxDateAsc(Long partyId);
+	 List<Transaction> findByPartyIdOrderByCreatedDateAsc(Long partyId);
 	 
 	 Page<Transaction> findByPartyIdOrderByCreatedDateDesc(Long partyId, Pageable page);
 	 

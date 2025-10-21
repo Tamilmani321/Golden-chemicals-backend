@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,6 @@ import com.gld.customException.ResourceNotFound;
 import com.gld.dao.PartyRepo;
 import com.gld.dao.TransactionRepo;
 import com.gld.dto.TransactionDto;
-import com.gld.entity.Party;
 import com.gld.entity.Transaction;
 import com.gld.mapper.TransactionMapper;
 import com.gld.service.TransactionService;
@@ -55,10 +53,10 @@ public class TransactionServiceImpl implements TransactionService{
 	}
 
 	@Override
-	@Cacheable(
-		    value = "transactionsByParty", 
-		    key = "#pId + '_' + #pageNo + '_' + #size"
-		)
+//	@Cacheable(
+//		    value = "transactionsByParty", 
+//		    key = "#pId + '_' + #pageNo + '_' + #size"
+//		)
 	public Page<Transaction> getTransactionByPartyIdDesc(Long pId, int pageNo, int size) {
 		log.info(" fetching Transaction Data by Id : "+pId);
 		PageRequest pageable = PageRequest.of(pageNo, size);

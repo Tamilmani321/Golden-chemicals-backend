@@ -73,7 +73,7 @@ public class GMDUtility {
 	
 	public void recalculateBalances (Long partyId) {
 		 List<Transaction> transactions = transactionRepo
-			        .findByPartyIdOrderByTxDateAsc(partyId);
+			        .findByPartyIdOrderByCreatedDateAsc(partyId);
 		 log.info("Transactions : "+transactions);
 		 BigDecimal balance = BigDecimal.ZERO;
 		 for (Transaction txn : transactions) {

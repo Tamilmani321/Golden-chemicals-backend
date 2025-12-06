@@ -12,6 +12,8 @@ public interface TransactionService {
 	TransactionDto save(TransactionDto transactionDto);
 
 	Page<Transaction> getTransactionByPartyIdDesc(Long pId, int page, int size);
+	
+	List<Transaction> getTransactionByPartyIdDesc(Long pId);
 
 	List<TransactionDto> getTransactionByPartyIdAsc(Long pId);
 

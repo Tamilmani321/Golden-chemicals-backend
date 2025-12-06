@@ -63,6 +63,11 @@ public class TransactionServiceImpl implements TransactionService{
 		return transactionRepo.findByPartyIdOrderByCreatedDateDesc(pId, pageable);
 	}
 	
+	public List<Transaction> getTransactionByPartyIdDesc(Long pId) {
+		log.info(" fetching Transaction Data by Id : "+pId);
+		return transactionRepo.findTransactionsByParty(pId);
+	}
+	
 	
 	
 

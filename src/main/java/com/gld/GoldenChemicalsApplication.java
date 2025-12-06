@@ -9,7 +9,8 @@ import org.springframework.cache.annotation.EnableCaching;
 public class GoldenChemicalsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GoldenChemicalsApplication.class, args);    
+		SpringApplication.run(GoldenChemicalsApplication.class, args); 
+		System.err.println("###Application Started###");
 	}
 
 }

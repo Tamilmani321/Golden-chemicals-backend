@@ -45,10 +45,16 @@ public class TransactionController {
 	public Page<Transaction> getTransactionByPid (
 			@PathVariable Long pId,
 			@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "10") int size
+			@RequestParam(defaultValue = "5") int size
 			){
 		log.info(" Requested Transaction Data Fetching  : "+pId);
 		return transactionService.getTransactionByPartyIdDesc(pId, page, size);
+	}
+	
+	@GetMapping("/all/{pId}")
+	public List<Transaction> getTransactionByPid (@PathVariable Long pId){
+		log.info(" Requested All Transaction Data Fetching  : "+pId);
+		return transactionService.getTransactionByPartyIdDesc(pId);
 	}
 	
 	@PutMapping 

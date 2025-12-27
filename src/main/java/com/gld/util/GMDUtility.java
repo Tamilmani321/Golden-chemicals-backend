@@ -61,7 +61,7 @@ public class GMDUtility {
 		log.info(" currentBalance : "+currentBalance);
 		Transaction transaction = new Transaction();
 		transaction.setParty(party);
-		transaction.setProduct(transactionDto.product());
+		transaction.setProduct(String.join(", ", transactionDto.products()));
 		transaction.setRemark(transactionDto.remark());
 		transaction.setAmount(transactionAmt);
 		transaction.setBalance(currentBalance);

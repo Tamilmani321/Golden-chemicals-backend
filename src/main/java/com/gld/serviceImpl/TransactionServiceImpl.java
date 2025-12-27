@@ -88,7 +88,7 @@ public class TransactionServiceImpl implements TransactionService{
 		TransactionType type = transactionDto.type();
 		
 		existingTxn.setTxDate(transactionDto.txDate());
-		existingTxn.setProduct(transactionDto.product());
+		existingTxn.setProduct(String.join(", ", transactionDto.products()));
 		existingTxn.setRemark(transactionDto.remark());
 		existingTxn.setType(type);
 		
